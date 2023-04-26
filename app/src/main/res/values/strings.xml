@@ -11,4 +11,5 @@
     <string name="apply">Применить</string>
     <string name="cancel">Отмена</string>
     <string name="navigate_to_list">Перейти к списку</string>
+    <string name="route">Маршрут: %s</string>
 </resources>

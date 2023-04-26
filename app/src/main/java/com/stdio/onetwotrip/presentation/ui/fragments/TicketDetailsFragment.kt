@@ -38,6 +38,11 @@ class TicketDetailsFragment : Fragment(R.layout.fragment_ticket_details) {
             binding.tvPrice.text =
                 getString(R.string.price_business, selectedPrice.amount, ticket.currency)
         }
+        var route = ticket.trips[0].from
+        for (trip in ticket.trips) {
+            route += " -> ${trip.to}"
+        }
+        binding.tvRoute.text = getString(R.string.route, route)
         binding.tvTransfers.text = getString(R.string.transfers_count, ticket.trips.size - 1)
     }
 

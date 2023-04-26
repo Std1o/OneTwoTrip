@@ -19,6 +19,13 @@
             tools:text="@string/price_economy"/>
 
         <TextView
+            android:id="@+id/tvRoute"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_16"
+            tools:text="@string/transfers_count"/>
+
+        <TextView
             android:id="@+id/tvTransfers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
