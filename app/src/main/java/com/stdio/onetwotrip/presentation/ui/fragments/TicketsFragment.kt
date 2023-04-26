@@ -66,8 +66,8 @@ class TicketsFragment : Fragment(R.layout.fragment_tickets) {
             selectedPrice = prices[itemPos]
             }
             .setPositiveButton(
-                "OK"
-            ) { dialog, id ->
+                R.string.apply
+            ) { _, id ->
                 if (selectedPrice != null) {
                     val action = TicketsFragmentDirections.actionTicketsFragmentToTicketDetailsFragment(ticket, selectedPrice!!)
                     findNavController().navigate(action)
@@ -75,7 +75,7 @@ class TicketsFragment : Fragment(R.layout.fragment_tickets) {
                     showSnackbar(R.string.price_selection_error)
                 }
             }
-            .setNegativeButton("Отмена") { dialog, id ->
+            .setNegativeButton(R.string.cancel) { dialog, id ->
             }
         builder.setCancelable(false)
         builder.create().show()
