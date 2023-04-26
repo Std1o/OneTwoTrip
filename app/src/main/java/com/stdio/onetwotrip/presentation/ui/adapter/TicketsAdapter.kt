@@ -34,13 +34,15 @@ class TicketsAdapter(private val listener: (String) -> Unit) :
         with(holder) {
             val ticket = dataList[position]
             val context = holder.itemView.context
-            val priceEconomy = ticket.prices.firstOrNull { it.type == PriceType.ECONOMY }
-            val priceBusiness = ticket.prices.firstOrNull { it.type == PriceType.BUSINESS }
-            binding.tvPriceEconomy.text = context.getString(R.string.price_economy, priceEconomy?.amount, ticket.currency)
-            binding.tvPriceBusiness.text = context.getString(R.string.price_business, priceBusiness?.amount, ticket.currency)
+            val prices = ticket.prices.sortedBy { it.amount }
+            if (prices.size == 1) {
+                binding.tvPrices.text = context.getString(R.string.price, prices[0].amount, ticket.currency)
+            } else {
+                binding.tvPrices.text = context.getString(R.string.prices, prices[0].amount, ticket.currency, prices[1].amount, ticket.currency)
+            }
             binding.tvTransfers.text = context.getString(R.string.transfers_count, ticket.trips.size - 1)
             binding.tvDepartureAirport.text = context.getString(R.string.departure_airport, ticket.trips[0].from)
-            binding.tvLandingAirport.text = context.getString(R.string.departure_airport, ticket.trips[ticket.trips.size-1].to)
+            binding.tvLandingAirport.text = context.getString(R.string.landing_airport, ticket.trips[ticket.trips.size-1].to)
         }
     }
 
