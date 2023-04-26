@@ -1,3 +1,7 @@
 package com.stdio.onetwotrip.domain.models
 
-data class Price(val type: PriceType, val amount: Int)
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class Price(val type: PriceType, val amount: Int) : Parcelable

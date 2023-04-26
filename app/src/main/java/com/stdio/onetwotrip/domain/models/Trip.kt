@@ -1,3 +1,7 @@
 package com.stdio.onetwotrip.domain.models
 
-data class Trip(val from: String, val to: String)
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class Trip(val from: String, val to: String) : Parcelable

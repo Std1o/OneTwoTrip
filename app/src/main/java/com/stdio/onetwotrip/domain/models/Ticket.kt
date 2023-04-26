@@ -1,3 +1,7 @@
 package com.stdio.onetwotrip.domain.models
 
-data class Ticket(val currency: String, val prices: List<Price>, val trips: List<Trip>)
+import android.os.Parcelable
+import kotlinx.parcelize.Parcelize
+
+@Parcelize
+data class Ticket(val currency: String, val prices: List<Price>, val trips: List<Trip>) : Parcelable

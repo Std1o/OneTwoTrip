@@ -9,5 +9,17 @@
         android:id="@+id/ticketsFragment"
         android:name="com.stdio.onetwotrip.presentation.ui.fragments.TicketsFragment"
         android:label="fragment_tickets"
-        tools:layout="@layout/fragment_tickets" />
+        tools:layout="@layout/fragment_tickets" >
+        <action
+            android:id="@+id/action_ticketsFragment_to_ticketDetailsFragment"
+            app:destination="@id/ticketDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ticketDetailsFragment"
+        android:name="com.stdio.onetwotrip.presentation.ui.fragments.TicketDetailsFragment"
+        android:label="TicketDetailsFragment"
+        tools:layout="@layout/fragment_ticket_details">
+        <argument android:name="ticket"
+            app:argType="com.stdio.onetwotrip.domain.models.Ticket"/>
+    </fragment>
 </navigation>

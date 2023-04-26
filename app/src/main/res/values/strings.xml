@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">OneTwoTrip</string>
-    <string name="price_economy">Стоимость эконом класса: %d %s</string>
-    <string name="price_business">Стоимость бизнес класса: %d %s</string>
+    <string name="price_economy">Эконом класс: %d %s</string>
+    <string name="price_business">Бизнес класс: %d %s</string>
     <string name="prices">Цены: %d %s, %d %s</string>
     <string name="price">Цена: %d %s</string>
     <string name="transfers_count">Количество пересадок: %d</string>

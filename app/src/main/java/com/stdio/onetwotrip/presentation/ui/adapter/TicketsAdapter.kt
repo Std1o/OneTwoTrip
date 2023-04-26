@@ -8,7 +8,7 @@ import com.stdio.onetwotrip.databinding.ItemTicketBinding
 import com.stdio.onetwotrip.domain.models.PriceType
 import com.stdio.onetwotrip.domain.models.Ticket
 
-class TicketsAdapter(private val listener: (String) -> Unit) :
+class TicketsAdapter(private val listener: (Ticket) -> Unit) :
     RecyclerView.Adapter<TicketsAdapter.CourseViewHolder>() {
 
     private var dataList = emptyList<Ticket>()
@@ -33,6 +33,10 @@ class TicketsAdapter(private val listener: (String) -> Unit) :
     override fun onBindViewHolder(holder: CourseViewHolder, position: Int) {
         with(holder) {
             val ticket = dataList[position]
+            holder.itemView.setOnClickListener {
+                listener.invoke(ticket)
+            }
+
             val context = holder.itemView.context
             val prices = ticket.prices.sortedBy { it.amount }
             if (prices.size == 1) {
@@ -48,8 +52,4 @@ class TicketsAdapter(private val listener: (String) -> Unit) :
 
     inner class CourseViewHolder(val binding: ItemTicketBinding) :
         RecyclerView.ViewHolder(binding.root)
-
-    interface ClickListener {
-        fun onClick(ticket: Ticket)
-    }
 }
