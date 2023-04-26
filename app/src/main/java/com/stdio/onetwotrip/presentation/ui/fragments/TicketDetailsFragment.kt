@@ -1,34 +1,19 @@
 package com.stdio.onetwotrip.presentation.ui.fragments
 
-import android.app.DownloadManager
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
 import android.text.Html
-import android.util.Log
 import android.view.View
-import android.widget.Toast
-import androidx.appcompat.app.AlertDialog
 import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.navArgs
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.stdio.onetwotrip.R
-import com.stdio.onetwotrip.common.showSnackbar
 import com.stdio.onetwotrip.common.subscribeInUI
 import com.stdio.onetwotrip.common.viewBinding
 import com.stdio.onetwotrip.databinding.FragmentTicketDetailsBinding
-import com.stdio.onetwotrip.databinding.FragmentTicketsBinding
-import com.stdio.onetwotrip.domain.models.Price
 import com.stdio.onetwotrip.domain.models.PriceType
-import com.stdio.onetwotrip.presentation.ui.adapter.TicketsAdapter
-import com.stdio.onetwotrip.presentation.viewmodel.MainViewModel
 import com.stdio.onetwotrip.presentation.viewmodel.TicketDetailsViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.channels.ticker
-import java.io.File
 
 @AndroidEntryPoint
 class TicketDetailsFragment : Fragment(R.layout.fragment_ticket_details) {

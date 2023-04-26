@@ -1,13 +1,7 @@
 package com.stdio.onetwotrip.presentation.ui.fragments
 
-import android.app.DownloadManager
-import android.content.Context
-import android.net.Uri
 import android.os.Bundle
-import android.os.Environment
-import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -24,8 +18,6 @@ import com.stdio.onetwotrip.domain.models.Ticket
 import com.stdio.onetwotrip.presentation.ui.adapter.TicketsAdapter
 import com.stdio.onetwotrip.presentation.viewmodel.MainViewModel
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.channels.ticker
-import java.io.File
 
 
 @AndroidEntryPoint

@@ -5,13 +5,11 @@ import androidx.lifecycle.viewModelScope
 import com.stdio.onetwotrip.data.MainRepository
 import com.stdio.onetwotrip.domain.DataState
 import com.stdio.onetwotrip.domain.models.AirportInfoResponse
-import com.stdio.onetwotrip.domain.models.Ticket
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.zip
 import kotlinx.coroutines.launch
 import javax.inject.Inject

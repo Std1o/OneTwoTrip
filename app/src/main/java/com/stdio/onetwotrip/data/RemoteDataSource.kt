@@ -1,6 +1,5 @@
 package com.stdio.onetwotrip.data
 
-import com.stdio.onetwotrip.data.MainService
 import javax.inject.Inject
 
 

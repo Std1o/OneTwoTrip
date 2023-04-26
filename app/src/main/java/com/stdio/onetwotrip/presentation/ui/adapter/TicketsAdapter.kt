@@ -7,7 +7,6 @@ import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.stdio.onetwotrip.R
 import com.stdio.onetwotrip.databinding.ItemTicketBinding
-import com.stdio.onetwotrip.domain.models.PriceType
 import com.stdio.onetwotrip.domain.models.Ticket
 
 class TicketsAdapter(private val listener: (Ticket) -> Unit) :
