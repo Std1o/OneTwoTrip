@@ -9,4 +9,7 @@ class MainRepository @Inject constructor(private val remoteDataSource: RemoteDat
 
     suspend fun getTickets() =
         flow { emit(apiCall { remoteDataSource.getTickets() }) }
+
+    suspend fun getAirportInfo(code: String) =
+        flow { emit(apiCall { remoteDataSource.getAirportInfo(code) }) }
 }

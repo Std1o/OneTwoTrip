@@ -1,7 +1,9 @@
 package com.stdio.onetwotrip.presentation.ui.adapter
 
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.text.HtmlCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.stdio.onetwotrip.R
 import com.stdio.onetwotrip.databinding.ItemTicketBinding
@@ -45,8 +47,10 @@ class TicketsAdapter(private val listener: (Ticket) -> Unit) :
                 binding.tvPrices.text = context.getString(R.string.prices, prices[0].amount, ticket.currency, prices[1].amount, ticket.currency)
             }
             binding.tvTransfers.text = context.getString(R.string.transfers_count, ticket.trips.size - 1)
-            binding.tvDepartureAirport.text = context.getString(R.string.departure_airport, ticket.trips[0].from)
-            binding.tvLandingAirport.text = context.getString(R.string.landing_airport, ticket.trips[ticket.trips.size-1].to)
+            binding.tvDepartureAirport.text =
+                Html.fromHtml(context.getString(R.string.departure_airport, ticket.trips[0].from), HtmlCompat.FROM_HTML_MODE_LEGACY)
+            binding.tvLandingAirport.text =
+                Html.fromHtml(context.getString(R.string.landing_airport, ticket.trips[ticket.trips.size-1].to), HtmlCompat.FROM_HTML_MODE_LEGACY)
         }
     }
 

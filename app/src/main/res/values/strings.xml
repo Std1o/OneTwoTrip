@@ -5,7 +5,7 @@
     <string name="prices">Цены: %d %s, %d %s</string>
     <string name="price">Цена: %d %s</string>
     <string name="transfers_count">Количество пересадок: %d</string>
-    <string name="departure_airport">Аэропорт вылета: %s</string>
-    <string name="landing_airport">Аэропорт приземления: %s</string>
+    <string name="departure_airport"><![CDATA[<font color="#008000">Аэропорт вылета</font>]]> %s</string>
+    <string name="landing_airport"><![CDATA[<font color="#008000">Аэропорт приземления</font>]]> %s</string>
     <string name="price_selection_error">Выберите класс перелёта</string>
 </resources>
