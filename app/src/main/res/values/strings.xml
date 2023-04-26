@@ -10,4 +10,5 @@
     <string name="price_selection_error">Выберите класс перелёта</string>
     <string name="apply">Применить</string>
     <string name="cancel">Отмена</string>
+    <string name="navigate_to_list">Перейти к списку</string>
 </resources>

@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/ticketsFragment">
+    app:startDestination="@id/uselessFragment">
 
     <fragment
         android:id="@+id/ticketsFragment"
@@ -23,5 +23,14 @@
             app:argType="com.stdio.onetwotrip.domain.models.Ticket"/>
         <argument android:name="selectedPrice"
             app:argType="com.stdio.onetwotrip.domain.models.Price"/>
+    </fragment>
+    <fragment
+        android:id="@+id/uselessFragment"
+        android:name="com.stdio.onetwotrip.presentation.ui.fragments.UselessFragment"
+        android:label="UselessFragment"
+        tools:layout="@layout/fragment_useless">
+        <action
+            android:id="@+id/action_uselessFragment_to_ticketsFragment"
+            app:destination="@id/ticketsFragment" />
     </fragment>
 </navigation>
