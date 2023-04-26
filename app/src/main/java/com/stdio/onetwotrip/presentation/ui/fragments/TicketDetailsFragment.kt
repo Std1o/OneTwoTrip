@@ -36,10 +36,12 @@ class TicketDetailsFragment : Fragment(R.layout.fragment_ticket_details) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val ticket = args.ticket
-        val priceEconomy = ticket.prices.firstOrNull { it.type == PriceType.ECONOMY }
-        val priceBusiness = ticket.prices.firstOrNull { it.type == PriceType.BUSINESS }
-        binding.tvPriceEconomy.text = getString(R.string.price_economy, priceEconomy?.amount, ticket.currency)
-        binding.tvPriceBusiness.text = getString(R.string.price_business, priceBusiness?.amount, ticket.currency)
+        val selectedPrice = args.selectedPrice
+        if (selectedPrice.type == PriceType.ECONOMY) {
+            binding.tvPrice.text = getString(R.string.price_economy, selectedPrice.amount, ticket.currency)
+        } else {
+            binding.tvPrice.text = getString(R.string.price_business, selectedPrice.amount, ticket.currency)
+        }
         binding.tvTransfers.text = getString(R.string.transfers_count, ticket.trips.size - 1)
         binding.tvDepartureAirport.text = getString(R.string.departure_airport, ticket.trips[0].from)
         binding.tvLandingAirport.text = getString(R.string.departure_airport, ticket.trips[ticket.trips.size-1].to)

@@ -21,5 +21,7 @@
         tools:layout="@layout/fragment_ticket_details">
         <argument android:name="ticket"
             app:argType="com.stdio.onetwotrip.domain.models.Ticket"/>
+        <argument android:name="selectedPrice"
+            app:argType="com.stdio.onetwotrip.domain.models.Price"/>
     </fragment>
 </navigation>

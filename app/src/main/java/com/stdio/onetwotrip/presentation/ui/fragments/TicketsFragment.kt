@@ -52,29 +52,40 @@ class TicketsFragment : Fragment(R.layout.fragment_tickets) {
     }
 
     private fun showTariffSelectionDialog(ticket: Ticket) {
-        val prices = ticket.prices
+        val prices = ticket.prices.sortedBy { it.amount }
         val currency = ticket.currency
         val builder = AlertDialog.Builder(requireContext())
         val priceEconomy = prices.firstOrNull { it.type == PriceType.ECONOMY }
         val priceBusiness = prices.firstOrNull { it.type == PriceType.BUSINESS }
-        val items = arrayOf(
-            getString(R.string.price_economy, priceEconomy?.amount, currency),
-            getString(R.string.price_business, priceBusiness?.amount, currency),
-        )
-        builder.setSingleChoiceItems(items, -1) { dialog, item ->
-                Toast.makeText(
-                    activity, "Выбрано:  ${items[item]}",
-                    Toast.LENGTH_SHORT
-                ).show()
+        val items = listOfNotNull(
+            if (priceEconomy != null) getString(
+                R.string.price_economy,
+                priceEconomy.amount,
+                currency
+            ) else null,
+            if (priceBusiness != null) getString(
+                R.string.price_business,
+                priceBusiness.amount,
+                currency
+            ) else null,
+        ).toTypedArray()
+        var selectedPrice: Price? = null
+        builder.setSingleChoiceItems(items, -1) { dialog, itemPos ->
+            selectedPrice = prices[itemPos]
             }
             .setPositiveButton(
                 "OK"
             ) { dialog, id ->
-                val action = TicketsFragmentDirections.actionTicketsFragmentToTicketDetailsFragment(ticket)
-                findNavController().navigate(action)
+                if (selectedPrice != null) {
+                    val action = TicketsFragmentDirections.actionTicketsFragmentToTicketDetailsFragment(ticket, selectedPrice!!)
+                    findNavController().navigate(action)
+                } else {
+                    showSnackbar(R.string.price_selection_error)
+                }
             }
             .setNegativeButton("Отмена") { dialog, id ->
             }
+        builder.setCancelable(false)
         builder.create().show()
     }
 }

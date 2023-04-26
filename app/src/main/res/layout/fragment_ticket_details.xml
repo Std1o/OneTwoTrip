@@ -8,14 +8,7 @@
     tools:context=".presentation.ui.fragments.TicketsFragment">
 
     <TextView
-        android:id="@+id/tvPriceEconomy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        tools:text="@string/price_economy"/>
-
-    <TextView
-        android:id="@+id/tvPriceBusiness"
+        android:id="@+id/tvPrice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="16sp"
