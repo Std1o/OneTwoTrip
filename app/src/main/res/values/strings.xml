@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">OneTwoTrip</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="price_economy">Стоимость эконом класса: %d %s</string>
+    <string name="price_business">Стоимость бизнес класса: %d %s</string>
+    <string name="transfers_count">Количество пересадок: %d</string>
+    <string name="departure_airport">Аэропорт вылета: %s</string>
+    <string name="landing_airport">Аэропорт приземления: %s</string>
 </resources>
